@@ -1,0 +1,7 @@
+export EDITOR="nvim"
+export LESSHISTFILE="$HOME/.cache/less/history"
+export LS_COLORS="fi=91:di=94;1:ex=92:ln=95"
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
+ZSHENV_LOCAL=$ZDOTDIR/.zshenv.local
+[[ -a $ZSHENV_LOCAL ]] && source $ZSHENV_LOCAL

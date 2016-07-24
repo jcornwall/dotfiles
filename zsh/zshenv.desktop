@@ -1,0 +1,2 @@
+export LIBVA_DRIVER_NAME="vdpau"
+export PASSWORD_STORE_DIR="$HOME/sync/passwords"
