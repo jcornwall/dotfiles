@@ -5,7 +5,7 @@ import os, socket, sys
 # Creates directories for temporary application files.
 def make_cache_dirs():
   cache_dir = os.path.expanduser("~/.cache")
-  app_names = ["gdb", "less", "zsh"]
+  app_names = ["gdb", "less", "stoken", "zsh"]
 
   for app_name in app_names:
     app_cache_dir = os.path.join(cache_dir, app_name)
@@ -16,17 +16,22 @@ def link_config_files():
   script_dir = os.path.dirname(os.path.realpath(sys.argv[0]))
   home_dir = os.path.expanduser("~")
   config_dir = os.path.join(home_dir, ".config")
- 
+
   configs_src_dst = [
+    ["dunst/dunstrc",                      "dunst/dunstrc"],
     ["fontconfig/fonts.conf",              "fontconfig/fonts.conf"],
     ["gdb/init",                           "gdb/init"],
     ["git/config." + socket.gethostname(), "git/config"],
+    ["gtk/gtkrc-2.0",                      "gtk-2.0/gtkrc"],
+    ["gtk/settings.ini",                   "gtk-3.0/settings.ini"],
     ["i3/config",                          "i3/config"],
+    ["i3/move-ws.py",                      "i3/move-ws.py"],
     ["i3/status.py",                       "i3/status.py"],
     ["nvim/base16-tomorrow.vim",           "nvim/colors/base16-tomorrow.vim"],
     ["nvim/init.vim",                      "nvim/init.vim"],
-    ["systemd/ssh-agent.service",          "systemd/user/ssh-agent.service"],
     ["termite/config",                     "termite/config"],
+    ["x/xinitrc",                          os.path.join(home_dir, ".xinitrc")],
+    ["x/Xresources",                       "x/Xresources"],
     ["zsh/zshenv.all",                     "zsh/.zshenv"],
     ["zsh/zshenv.home",                    os.path.join(home_dir, ".zshenv")],
     ["zsh/zshenv." + socket.gethostname(), "zsh/.zshenv.local"],
