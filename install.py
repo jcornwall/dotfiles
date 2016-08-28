@@ -32,6 +32,7 @@ def link_config_files():
     ["termite/config",                     "termite/config"],
     ["x/xinitrc",                          os.path.join(home_dir, ".xinitrc")],
     ["x/Xresources",                       "x/Xresources"],
+    ["xdg/user-dirs.dirs",                 "user-dirs.dirs"],
     ["zsh/zshenv.all",                     "zsh/.zshenv"],
     ["zsh/zshenv.home",                    os.path.join(home_dir, ".zshenv")],
     ["zsh/zshenv." + socket.gethostname(), "zsh/.zshenv.local"],
