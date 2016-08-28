@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import i3pystatus
 
 status = i3pystatus.Status()

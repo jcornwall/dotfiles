@@ -1,5 +1,15 @@
-font pango:Monospace, FontAwesome 12
+# Per-monitor workspace configuration.
+set $ws1 1:web
+set $ws2 2:term
+set $ws3 3:web+
 
+workspace "$ws1" output DVI-D-1
+workspace "$ws2" output DVI-D-1
+workspace "$ws3" output DVI-I-1
+
+set $wsmove exec --no-startup-id ~/.config/i3/move-ws.py
+
+# Key bindings.
 set $mod Mod4
 floating_modifier $mod
 
@@ -21,19 +31,19 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space       focus mode_toggle
 bindsym $mod+a           focus parent
 bindsym $mod+r           mode "resize"
-bindsym $mod+1           workspace 1
-bindsym $mod+2           workspace 2
-bindsym $mod+3           workspace 3
-bindsym $mod+4           workspace 4
-bindsym $mod+5           workspace 5
-bindsym $mod+6           workspace 6
-bindsym $mod+7           workspace 7
-bindsym $mod+8           workspace 8
-bindsym $mod+9           workspace 9
-bindsym $mod+0           workspace 10
-bindsym $mod+Shift+1     move container to workspace 1
-bindsym $mod+Shift+2     move container to workspace 2
-bindsym $mod+Shift+3     move container to workspace 3
+bindsym $mod+1           $wsmove $ws1
+bindsym $mod+2           $wsmove $ws2
+bindsym $mod+3           $wsmove $ws3
+bindsym $mod+4           $wsmove 4
+bindsym $mod+5           $wsmove 5
+bindsym $mod+6           $wsmove 6
+bindsym $mod+7           $wsmove 7
+bindsym $mod+8           $wsmove 8
+bindsym $mod+9           $wsmove 9
+bindsym $mod+0           $wsmove 10
+bindsym $mod+Shift+1     move container to workspace $ws1
+bindsym $mod+Shift+2     move container to workspace $ws2
+bindsym $mod+Shift+3     move container to workspace $ws3
 bindsym $mod+Shift+4     move container to workspace 4
 bindsym $mod+Shift+5     move container to workspace 5
 bindsym $mod+Shift+6     move container to workspace 6
@@ -45,7 +55,7 @@ bindsym $mod+Shift+q     kill
 bindsym $mod+Shift+c     reload
 bindsym $mod+Shift+r     restart
 bindsym $mod+Return      exec termite
-bindsym $mod+d           exec j4-dmenu-desktop
+bindsym $mod+d           exec --no-startup-id j4-dmenu-desktop
 bindsym $mod+Shift+e     exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 mode "resize" {
@@ -62,12 +72,21 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle
 
-for_window [class="^.*"] border pixel 0
+# Appearance and styling.
+font pango:Monospace, FontAwesome 12
+
+for_window [class="^.*"] border pixel 2
 gaps outer 0
 gaps inner 20
 
+client.focused          #969896 #000000 #ffffff #969896 #969896
+client.focused_inactive #373b41 #000000 #ffffff #373b41 #373b41
+client.unfocused        #373b41 #000000 #ffffff #373b41 #373b41
+
+# i3bar setup.
 bar {
-  status_command python ~/.config/i3/status.py
+  strip_workspace_numbers yes
+  status_command ~/.config/i3/status.py
   separator_symbol "    "
   position top
 
@@ -77,6 +96,24 @@ bar {
   }
 }
 
+# Load a background image
+exec --no-startup-id feh --no-feh-bg --bg-fill /home/jay/img/sunset_over_glacier_national_park.jpg
+
+# Load Xft font rendering settings
+exec --no-startup-id xrdb -merge ~/.config/x/Xresources
+
+# Disable DPMS and screensaver
+exec --no-startup-id xset s off -dpms
+
 # Remap Caps-Lock tap to Escape, Caps-Lock hold to Ctrl
-exec setxkbmap -option caps:ctrl_modifier
-exec xcape -e Caps_Lock=Escape
+exec --no-startup-id setxkbmap -option caps:ctrl_modifier
+exec --no-startup-id xcape -e Caps_Lock=Escape
+
+# Start a notification daemon
+exec --no-startup-id dunst
+
+# Start a disk mount daemon.
+exec --no-startup-id udiskie
+
+# Hide the cursor while typing.
+exec --no-startup-id xbanish
