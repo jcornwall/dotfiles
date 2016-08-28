@@ -1,10 +1,12 @@
 set background=dark
 set expandtab
 set linebreak
+set nohlsearch
 set noswapfile
 set number
 set ruler
 set shiftwidth=2
+set showtabline=2
 set smartindent
 set tabstop=2
 
