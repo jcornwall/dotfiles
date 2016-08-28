@@ -1,2 +1,2 @@
-export LIBVA_DRIVER_NAME="vdpau"
-export PASSWORD_STORE_DIR="$HOME/sync/passwords"
+export PASSWORD_STORE_DIR="$HOME/sync/pass"
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gnupg/S.gpg-agent.ssh"

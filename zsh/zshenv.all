@@ -1,7 +1,9 @@
 export EDITOR="nvim"
+export GIMP2_DIRECTORY="$HOME/.config/gimp"
+export GTK2_RC_FILES="$HOME/.config/gtk-2.0/gtkrc"
 export LESSHISTFILE="$HOME/.cache/less/history"
 export LS_COLORS="fi=91:di=94;1:ex=92:ln=95"
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+export XAUTHORITY="$XDG_RUNTIME_DIR/xauthority"
 
 ZSHENV_LOCAL=$ZDOTDIR/.zshenv.local
 [[ -a $ZSHENV_LOCAL ]] && source $ZSHENV_LOCAL

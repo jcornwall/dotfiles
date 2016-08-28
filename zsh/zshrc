@@ -2,10 +2,11 @@
 autoload -U compinit
 
 # Set shell configuration options.
-setopt autocd          # Change working directory without cd command
-setopt histignoredups  # Don't save duplicate lines in the history
-setopt noautomenu      # Don't cycle through tab-completion options
-bindkey -v             # Vi line editing mode
+setopt autocd             # Change working directory without cd command
+setopt histignoredups     # Don't save duplicate lines in the history
+setopt noautomenu         # Don't cycle through tab-completion options
+setopt noautoremoveslash  # Keep trailing slash after tab completion
+bindkey -v                # Vi line editing mode
 
 # Initialize shell completion system.
 compinit -d ~/.cache/zsh/zcompdump
@@ -50,7 +51,9 @@ alias grep="grep --color"
 alias ll="ls --color -l"
 alias ls="ls --color"
 alias mv="mv -i"
+alias o="xdg-open &>/dev/null"
 alias rm="rm -i"
 alias s="sudo"
+alias stoken="stoken --rcfile=$HOME/.cache/stoken/stokenrc"
 alias vim="nvim"
 alias wget="wget --no-hsts"
