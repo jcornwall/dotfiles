@@ -1,6 +1,9 @@
 " Base16 Tomorrow (https://github.com/chriskempson/base16)
 " Scheme: Chris Kempson (http://chriskempson.com)
 
+" Jay Cornwall: using 256 color (bright-compatibile) terminal theme
+let base16colorspace=256
+
 " GUI color definitions
 let s:gui00 = "1d1f21"
 let s:gui01 = "282a2e"
@@ -288,12 +291,3 @@ delf <sid>cterm
 " Remove color variables
 unlet s:gui00 s:gui01 s:gui02 s:gui03  s:gui04  s:gui05  s:gui06  s:gui07  s:gui08  s:gui09 s:gui0A  s:gui0B  s:gui0C  s:gui0D  s:gui0E  s:gui0F
 unlet s:cterm00 s:cterm01 s:cterm02 s:cterm03 s:cterm04 s:cterm05 s:cterm06 s:cterm07 s:cterm08 s:cterm09 s:cterm0A s:cterm0B s:cterm0C s:cterm0D s:cterm0E s:cterm0F
-
-" Local changes by Jay Cornwall
-hi ModeMsg      ctermfg=7 cterm=NONE
-hi MoreMsg      ctermfg=7 cterm=NONE
-hi StatusLine   ctermbg=0 ctermfg=0 cterm=bold
-hi StatusLineNC ctermbg=0 ctermfg=7 cterm=bold
-hi TabLine      ctermbg=0 ctermfg=0 cterm=bold
-hi TabLineFill  ctermbg=0
-hi TabLineSel   ctermbg=0 ctermfg=7 cterm=bold
