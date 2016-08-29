@@ -29,7 +29,6 @@ imap      <End>       <C-O>g$
 nnoremap  <CR>        :nohlsearch<CR>/<BS><CR>
 
 " Configure key bindings.
-inoremap  jk          <Esc>
 map!      <S-Insert>  <MiddleMouse>
 nmap      t           :tabnew<Space>
 
