@@ -1,9 +1,11 @@
 # Load external shell dependencies.
+
 autoload -U compinit
 
 # Set shell configuration options.
 setopt autocd             # Change working directory without cd command
 setopt histignoredups     # Don't save duplicate lines in the history
+setopt magicequalsubst    # Allow tab-completion after equals sign
 setopt noautomenu         # Don't cycle through tab-completion options
 setopt noautoremoveslash  # Keep trailing slash after tab completion
 bindkey -v                # Vi line editing mode
