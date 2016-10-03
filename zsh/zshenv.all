@@ -1,7 +1,10 @@
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_CONFIG_HOME="$HOME/.config"
+
 export EDITOR="nvim"
-export GIMP2_DIRECTORY="$HOME/.config/gimp"
-export GTK2_RC_FILES="$HOME/.config/gtk-2.0/gtkrc"
-export LESSHISTFILE="$HOME/.cache/less/history"
+export GIMP2_DIRECTORY="$XDG_CONFIG_HOME/gimp"
+export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
+export LESSHISTFILE="$XDG_CACHE_HOME/less/history"
 export LS_COLORS="fi=91:di=94;1:ex=92:ln=95"
 export XAUTHORITY="$XDG_RUNTIME_DIR/xauthority"
 
