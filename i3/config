@@ -105,10 +105,6 @@ exec --no-startup-id xrdb -merge ~/.config/x/Xresources
 # Disable DPMS and screensaver
 exec --no-startup-id xset s off -dpms
 
-# Remap Caps-Lock tap to Escape, Caps-Lock hold to Ctrl
-exec --no-startup-id setxkbmap -option caps:ctrl_modifier
-exec --no-startup-id xcape -e Caps_Lock=Escape
-
 # Start a notification daemon
 exec --no-startup-id dunst
 
