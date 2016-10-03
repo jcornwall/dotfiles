@@ -29,6 +29,8 @@ def link_config_files():
     ["i3/status.py",                       "i3/status.py"],
     ["nvim/base16-tomorrow.vim",           "nvim/colors/base16-tomorrow.vim"],
     ["nvim/init.vim",                      "nvim/init.vim"],
+    ["nvim/plug.vim",                      "nvim/autoload/plug.vim"],
+    ["nvim/ycm_extra_conf.py",             "nvim/ycm_extra_conf.py"],
     ["termite/config",                     "termite/config"],
     ["x/xinitrc",                          os.path.join(home_dir, ".xinitrc")],
     ["x/Xresources",                       "x/Xresources"],
