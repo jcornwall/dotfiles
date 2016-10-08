@@ -97,7 +97,7 @@ bar {
 }
 
 # Load a background image
-exec --no-startup-id feh --no-feh-bg --bg-fill /home/jay/img/sunset_over_glacier_national_park.jpg
+exec --no-startup-id ~/.fehbg
 
 # Load Xft font rendering settings
 exec --no-startup-id xrdb -merge ~/.config/x/Xresources
