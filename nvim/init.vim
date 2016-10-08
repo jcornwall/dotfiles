@@ -2,16 +2,15 @@ set background=dark
 set cursorline
 set expandtab
 set linebreak
+set noshowmode
 set noswapfile
 set number
 set ruler
 set shiftwidth=2
-set showtabline=2
 set smartindent
 set tabstop=2
 
 syntax on
-colorscheme base16-tomorrow
 
 " Make cursor navigation aware of visible line-wrap.
 map       j           gj
@@ -47,13 +46,19 @@ call plug#begin()
 Plug 'neomake/neomake'
 Plug 'tpope/vim-vinegar'
 "Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'vim-airline/vim-airline'
 
 call plug#end()
 
 " Configure plugins.
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 let g:neomake_open_list = 2
 let g:netrw_liststyle = 3
 let g:ycm_global_ycm_extra_conf = '~/.config/nvim/ycm_extra_conf.py'
 
 " Disable per-filetype indent overrides.
 filetype plugin indent off
+
+" Colorscheme depends on Airline extension.
+colorscheme base16-tomorrow

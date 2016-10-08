@@ -1,0 +1,5 @@
+These fonts have been patched with Powerline symbols using:
+  https://github.com/powerline/fontpatcher
+
+The Regular variant was manually tuned in Fontforge to eliminate
+artifacting in the triangular symbols at 96 DPI and point size 12.

@@ -20,6 +20,10 @@ def link_config_files():
   configs_src_dst = [
     ["dunst/dunstrc",                      "dunst/dunstrc"],
     ["fontconfig/fonts.conf",              "fontconfig/fonts.conf"],
+    ["fonts/UbuntuMonoPowerline-B.ttf",    os.path.join(home_dir, ".local/share/fonts/UbuntuMonoPowerline-B.ttf")],
+    ["fonts/UbuntuMonoPowerline-BI.ttf",   os.path.join(home_dir, ".local/share/fonts/UbuntuMonoPowerline-BI.ttf")],
+    ["fonts/UbuntuMonoPowerline-R.ttf",    os.path.join(home_dir, ".local/share/fonts/UbuntuMonoPowerline-R.ttf")],
+    ["fonts/UbuntuMonoPowerline-RI.ttf",   os.path.join(home_dir, ".local/share/fonts/UbuntuMonoPowerline-RI.ttf")],
     ["gdb/init",                           "gdb/init"],
     ["git/config." + socket.gethostname(), "git/config"],
     ["gtk/gtkrc-2.0",                      "gtk-2.0/gtkrc"],
