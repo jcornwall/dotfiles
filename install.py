@@ -34,6 +34,7 @@ def link_config_files():
     ["nvim/base16-tomorrow.vim",           "nvim/colors/base16-tomorrow.vim"],
     ["nvim/init.vim",                      "nvim/init.vim"],
     ["nvim/plug.vim",                      "nvim/autoload/plug.vim"],
+    ["spacemacs/init.el",                  os.path.join(home_dir, ".spacemacs.d/init.el")],
     ["termite/config",                     "termite/config"],
     ["x/xinitrc",                          os.path.join(home_dir, ".xinitrc")],
     ["x/Xresources",                       "x/Xresources"],
