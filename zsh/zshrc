@@ -30,6 +30,9 @@ bindkey -M viins "^[[1;5C" forward-word
 bindkey -M vicmd "^[[1;5C" forward-word
 bindkey -M viins "^[[3~"   delete-char
 bindkey -M vicmd "^[[3~"   delete-char
+bindkey -M viins "^?"      backward-delete-char
+bindkey -M viins "^W"      backward-kill-word
+bindkey -M viins "^U"      backward-kill-line
 bindkey -M viins "^K"      up-history
 bindkey -M viins "^J"      down-history
 bindkey -M viins "^R"      history-incremental-search-backward
