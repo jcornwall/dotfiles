@@ -1,10 +1,12 @@
 set background=dark
+set clipboard=unnamedplus
 set cursorline
 set expandtab
 set linebreak
 set noshowmode
 set noswapfile
 set number
+set relativenumber
 set ruler
 set shiftwidth=2
 set smartindent
@@ -28,7 +30,6 @@ imap      <End>       <C-O>g$
 let mapleader = ','
 
 nmap      <Leader>w   :w<CR>
-nmap      <Leader>m   :w<CR>:Neomake!<CR>
 map!      <S-Insert>  <MiddleMouse>
 
 " Clear highlighted search when backspace is pressed.
@@ -43,9 +44,7 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " Load plugins.
 call plug#begin()
 
-Plug 'neomake/neomake'
 Plug 'tpope/vim-vinegar'
-"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'vim-airline/vim-airline'
 
 call plug#end()
@@ -53,9 +52,8 @@ call plug#end()
 " Configure plugins.
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:neomake_open_list = 2
+let g:airline#extensions#tabline#fnamemod = ':t'
 let g:netrw_liststyle = 3
-let g:ycm_global_ycm_extra_conf = '~/.config/nvim/ycm_extra_conf.py'
 
 " Disable per-filetype indent overrides.
 filetype plugin indent off
