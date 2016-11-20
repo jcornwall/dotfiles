@@ -311,6 +311,15 @@ you should place your code here."
   ;; Custom key-bindings.
   (define-key evil-normal-state-map (kbd "<backspace>") 'evil-search-highlight-persist-remove-all)
 
+  (dolist (mode '(c-mode c++-mode))
+    (evil-leader/set-key-for-mode mode
+      "f f" 'ff-find-other-file))
+
+  ;; Custom code styling.
+  (c-set-offset 'innamespace 0)
+  (c-set-offset 'arglist-intro '+)
+  (c-set-offset 'arglist-close 0)
+
   ;; Safe variables for dir-locals.el.
   (put 'cmake-ide-build-dir 'safe-local-variable 'stringp)
 
