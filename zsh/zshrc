@@ -12,7 +12,6 @@ bindkey -v                # Vi line editing mode
 
 # Initialize shell completion system.
 compinit -d ~/.cache/zsh/zcompdump
-compdef -d git p4
 zstyle ":completion:*:default" list-colors ${(s.:.)LS_COLORS}
 
 # Configure key bindings.
@@ -43,6 +42,7 @@ bindkey -M viins "^i"      expand-or-complete-prefix
 HISTFILE="$HOME/.cache/zsh/history"
 HISTSIZE="10000"
 SAVEHIST="10000"
+WORDCHARS=${WORDCHARS/\//}
 
 [[ "$USER" != "jay" && "$USER" != "jcornwal" ]] && PS1PREFIX="$USER"
 [[ -n "$SSH_CLIENT" || -n "$PS1PREFIX" ]] && PS1PREFIX="$PS1PREFIX@%m"
@@ -52,8 +52,10 @@ PS1="[%{$PS1COL%}$PS1PREFIX%1~%{%f%}] "
 
 # Define command aliases.
 alias cp="cp -i"
+alias e="nvim"
 alias gdb="gdb -nh -x ~/.config/gdb/init"
 alias grep="grep --color"
+alias l="ls"
 alias ll="ls --color -l"
 alias ls="ls --color"
 alias mv="mv -i"
