@@ -18,6 +18,7 @@ def link_config_files():
   config_dir = os.path.join(home_dir, ".config")
 
   configs_src_dst = [
+    ["compton/compton.conf",               "compton.conf"],
     ["dunst/dunstrc",                      "dunst/dunstrc"],
     ["fontconfig/fonts.conf",              "fontconfig/fonts.conf"],
     ["fonts/UbuntuMonoPowerline-B.ttf",    os.path.join(home_dir, ".local/share/fonts/UbuntuMonoPowerline-B.ttf")],
