@@ -1,26 +1,23 @@
 " Base16 Tomorrow (https://github.com/chriskempson/base16)
 " Scheme: Chris Kempson (http://chriskempson.com)
 
-" Jay Cornwall: using 256 color (bright-compatibile) terminal theme
-let base16colorspace=256
-
 " GUI color definitions
-let s:gui00 = "1d1f21"
-let s:gui01 = "282a2e"
-let s:gui02 = "373b41"
-let s:gui03 = "969896"
-let s:gui04 = "b4b7b4"
-let s:gui05 = "c5c8c6"
-let s:gui06 = "e0e0e0"
-let s:gui07 = "ffffff"
-let s:gui08 = "cc6666"
-let s:gui09 = "de935f"
-let s:gui0A = "f0c674"
-let s:gui0B = "b5bd68"
-let s:gui0C = "8abeb7"
-let s:gui0D = "81a2be"
-let s:gui0E = "b294bb"
-let s:gui0F = "a3685a"
+let s:gui00 = "#1d1f21"
+let s:gui01 = "#282a2e"
+let s:gui02 = "#373b41"
+let s:gui03 = "#969896"
+let s:gui04 = "#b4b7b4"
+let s:gui05 = "#c5c8c6"
+let s:gui06 = "#e0e0e0"
+let s:gui07 = "#ffffff"
+let s:gui08 = "#cc6666"
+let s:gui09 = "#de935f"
+let s:gui0A = "#f0c674"
+let s:gui0B = "#b5bd68"
+let s:gui0C = "#8abeb7"
+let s:gui0D = "#81a2be"
+let s:gui0E = "#b294bb"
+let s:gui0F = "#a3685a"
 
 " Terminal color definitions
 let s:cterm00 = "00"
@@ -57,10 +54,10 @@ let g:colors_name = "base16-tomorrow"
 " Highlighting function
 fun <sid>hi(group, guifg, guibg, ctermfg, ctermbg, attr)
   if a:guifg != ""
-    exec "hi " . a:group . " guifg=#" . s:gui(a:guifg)
+    exec "hi " . a:group . " guifg=" . s:gui(a:guifg)
   endif
   if a:guibg != ""
-    exec "hi " . a:group . " guibg=#" . s:gui(a:guibg)
+    exec "hi " . a:group . " guibg=" . s:gui(a:guibg)
   endif
   if a:ctermfg != ""
     exec "hi " . a:group . " ctermfg=" . s:cterm(a:ctermfg)
@@ -288,7 +285,7 @@ delf <sid>hi
 delf <sid>gui
 delf <sid>cterm
 
-" Airline extension theming
+" vim-airline template by chartoin (http://github.com/chartoin)
 let g:airline#themes#base16_tomorrow#palette = {}
 
 let s:N1   = [ s:gui01, s:gui0B, s:cterm01, s:cterm0B ]
