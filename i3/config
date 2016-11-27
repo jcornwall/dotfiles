@@ -1,13 +1,19 @@
 # Per-monitor workspace configuration.
 set $ws1 1:web
 set $ws2 2:term
-set $ws3 3:web+
-set $ws4 4:code
-set $ws5 5:irc
+set $ws3 3:code
+set $ws4 4:comms
+set $ws5 5:web+
+set $ws6 6
+set $ws7 7
+set $ws8 8
+set $ws9 9
+set $ws10 10
 
-workspace "$ws1" output DVI-D-1
-workspace "$ws2" output DVI-D-1
-workspace "$ws3" output DVI-I-1
+workspace $ws1 output DVI-D-0
+workspace $ws2 output DVI-D-0
+workspace $ws3 output DVI-D-0
+workspace $ws4 output DVI-I-1
 
 set $wsmove exec --no-startup-id ~/.config/i3/move-ws.py
 
@@ -38,11 +44,11 @@ bindsym $mod+2           $wsmove $ws2
 bindsym $mod+3           $wsmove $ws3
 bindsym $mod+4           $wsmove $ws4
 bindsym $mod+5           $wsmove $ws5
-bindsym $mod+6           $wsmove 6
-bindsym $mod+7           $wsmove 7
-bindsym $mod+8           $wsmove 8
-bindsym $mod+9           $wsmove 9
-bindsym $mod+0           $wsmove 10
+bindsym $mod+6           $wsmove $ws6
+bindsym $mod+7           $wsmove $ws7
+bindsym $mod+8           $wsmove $ws8
+bindsym $mod+9           $wsmove $ws9
+bindsym $mod+0           $wsmove $ws10
 bindsym $mod+Shift+1     move container to workspace $ws1
 bindsym $mod+Shift+2     move container to workspace $ws2
 bindsym $mod+Shift+3     move container to workspace $ws3
@@ -57,7 +63,8 @@ bindsym $mod+Shift+q     kill
 bindsym $mod+Shift+c     reload
 bindsym $mod+Shift+r     restart
 bindsym $mod+Return      exec termite
-bindsym $mod+d           exec --no-startup-id j4-dmenu-desktop
+bindsym $mod+d           exec --no-startup-id rofi -show run
+bindsym $mod+Tab         exec --no-startup-id rofi -show window
 bindsym $mod+Shift+e     exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 mode "resize" {
@@ -81,22 +88,32 @@ for_window [class="^.*"] border pixel 2
 gaps outer 0
 gaps inner 20
 
-client.focused          #969896 #000000 #ffffff #969896 #969896
+client.focused          #c79668 #000000 #ffffff #c79668 #c79668
 client.focused_inactive #373b41 #000000 #ffffff #373b41 #373b41
 client.unfocused        #373b41 #000000 #ffffff #373b41 #373b41
 
 # i3bar setup.
 bar {
+  i3bar_command i3bar -t
   strip_workspace_numbers yes
   status_command ~/.config/i3/status.py
-  separator_symbol "    "
   position top
+  tray_output primary
+  tray_padding 1
+  height 22
+  separator_symbol " "
 
   colors {
-    statusline #e0e0e0
-    background #1d1f21
+    statusline #c79668
+    background #00000000
+    focused_workspace #b7ba53 #b7ba53 #231e18
+    active_workspace #9d8b70 #9d8b70 #231e18
+    inactive_workspace #231e18 #231e18 #c79668
   }
 }
+
+# Start a compositor.
+exec --no-startup-id compton
 
 # Load a background image
 exec --no-startup-id ~/.fehbg
@@ -115,3 +132,6 @@ exec --no-startup-id udiskie
 
 # Hide the cursor while typing.
 exec --no-startup-id xbanish
+
+# Start the NetworkManager tray applet.
+exec --no-startup-id nm-applet

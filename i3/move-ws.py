@@ -1,12 +1,14 @@
 #!/usr/bin/env python
 
-import i3, sys
+import i3ipc, sys
 
 def MoveWsToActiveScreen(ws_name):
   # Find the focused output.
+  i3 = i3ipc.Connection()
+
   out_focus = next((ws["output"] for ws in i3.get_workspaces() if ws["focused"]), None)
   if out_focus == None:
-    raise RuntimeError("workspace {} not found".format(ws_name))
+    raise RuntimeError("no focused workspace found")
 
   # Move the target workspace to the focused output.
   i3.command("workspace " + ws_name + "; move workspace to output " + out_focus)
