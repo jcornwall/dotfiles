@@ -5,7 +5,7 @@ import os, socket, sys
 # Creates directories for temporary application files.
 def make_cache_dirs():
   cache_dir = os.path.expanduser("~/.cache")
-  app_names = ["gdb", "less", "stoken", "zsh"]
+  app_names = ["gdb", "less", "zsh"]
 
   for app_name in app_names:
     app_cache_dir = os.path.join(cache_dir, app_name)
