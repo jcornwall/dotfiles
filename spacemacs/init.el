@@ -307,6 +307,7 @@ you should place your code here."
   ;; Custom variables.
   (setq gdb-many-windows t)
   (setq scroll-margin 10)
+  (setq vc-follow-symlinks t)
 
   ;; Custom key-bindings.
   (define-key evil-normal-state-map (kbd "<backspace>") 'evil-search-highlight-persist-remove-all)
@@ -394,10 +395,13 @@ you should place your code here."
   (setq compilation-exit-message-function 'compilation-exit-autoclose)
 
   ;; Custom styling.
+  (add-to-list 'custom-theme-load-path "~/.spacemacs.d/themes")
+  (load-theme 'base16-woodland)
+
   (set-face-attribute 'linum-relative-current-face nil
-                      :background "#282a2e" :foreground "#969896" :weight 'normal)
+                      :background "#302b25" :foreground "#9d8b70" :weight 'normal)
   (set-face-attribute 'company-template-field nil
-                      :background "#373b41" :foreground "#c5c8c6")
+                      :background "#48413a" :foreground "#cabcb1")
 
   )
 

@@ -35,6 +35,7 @@ def link_config_files():
     ["nvim/base16-woodland.vim",           "nvim/colors/base16-woodland.vim"],
     ["nvim/init.vim",                      "nvim/init.vim"],
     ["nvim/plug.vim",                      "nvim/autoload/plug.vim"],
+    ["spacemacs/base16-woodland-theme.el", os.path.join(home_dir, ".spacemacs.d/themes/base16-woodland-theme.el")],
     ["spacemacs/init.el",                  os.path.join(home_dir, ".spacemacs.d/init.el")],
     ["termite/config",                     "termite/config"],
     ["x/xinitrc",                          os.path.join(home_dir, ".xinitrc")],
