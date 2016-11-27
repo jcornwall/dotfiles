@@ -32,7 +32,7 @@ def link_config_files():
     ["i3/config",                          "i3/config"],
     ["i3/move-ws.py",                      "i3/move-ws.py"],
     ["i3/status.py",                       "i3/status.py"],
-    ["nvim/base16-tomorrow.vim",           "nvim/colors/base16-tomorrow.vim"],
+    ["nvim/base16-woodland.vim",           "nvim/colors/base16-woodland.vim"],
     ["nvim/init.vim",                      "nvim/init.vim"],
     ["nvim/plug.vim",                      "nvim/autoload/plug.vim"],
     ["spacemacs/init.el",                  os.path.join(home_dir, ".spacemacs.d/init.el")],

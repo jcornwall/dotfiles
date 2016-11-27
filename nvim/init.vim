@@ -64,6 +64,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:buffergator_suppress_keymaps = 1
 let g:buffergator_viewport_split_policy = 'R'
+let g:ctrlp_by_filename = 1
 let g:ctrlp_working_path_mode = 'r'
 let g:netrw_liststyle = 3
 
@@ -71,4 +72,4 @@ let g:netrw_liststyle = 3
 filetype plugin indent off
 
 " Colorscheme depends on Airline extension.
-colorscheme base16-tomorrow
+colorscheme base16-woodland
