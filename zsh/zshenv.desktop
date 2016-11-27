@@ -1,2 +1,3 @@
+export MOZ_ALLOW_GTK_DARK_THEME="true"
 export PASSWORD_STORE_DIR="$HOME/sync/pass"
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gnupg/S.gpg-agent.ssh"

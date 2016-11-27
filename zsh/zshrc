@@ -44,13 +44,21 @@ HISTSIZE="10000"
 SAVEHIST="10000"
 WORDCHARS=${WORDCHARS/\//}
 
+# Set prompt prefix with optional user/host.
 [[ "$USER" != "jay" && "$USER" != "jcornwal" ]] && PS1PREFIX="$USER"
 [[ -n "$SSH_CLIENT" || -n "$PS1PREFIX" ]] && PS1PREFIX="$PS1PREFIX@%m"
-[[ -n "$PS1PREFIX"  ]] && PS1PREFIX="$PS1PREFIX "
-PS1COL=$(printf "\x1b[38;2;240;198;116m")
-PS1="[%{$PS1COL%}$PS1PREFIX%1~%{%f%}] "
+
+PS1=""
+if [[ -n "$PS1PREFIX" ]]; then
+  PS1="%F{0}%K{8} $PS1PREFIX %F{8}%K{19}"
+fi
+PS1="$PS1%K{19}%F{20} %1~ %k%F{19}%f "
 
 # Define command aliases.
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias c="cd"
 alias cp="cp -i"
 alias e="nvim"
 alias gdb="gdb -nh -x ~/.config/gdb/init"
@@ -62,6 +70,6 @@ alias mv="mv -i"
 alias o="xdg-open &>/dev/null"
 alias rm="rm -i"
 alias s="sudo "
-alias stoken="stoken --rcfile=$HOME/.cache/stoken/stokenrc"
+alias t="termite &!"
 alias vim="nvim"
 alias wget="wget --no-hsts"

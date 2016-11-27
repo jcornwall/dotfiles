@@ -5,7 +5,7 @@ export EDITOR="nvim"
 export GIMP2_DIRECTORY="$XDG_CONFIG_HOME/gimp"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 export LESSHISTFILE="$XDG_CACHE_HOME/less/history"
-export LS_COLORS="fi=91:di=94;1:ex=92:ln=95"
+export LS_COLORS="fi=38;5;10:di=94;1:ex=91:ln=95"
 export XAUTHORITY="$XDG_RUNTIME_DIR/xauthority"
 
 ZSHENV_LOCAL=$ZDOTDIR/.zshenv.local
