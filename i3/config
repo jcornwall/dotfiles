@@ -98,8 +98,7 @@ bar {
   strip_workspace_numbers yes
   status_command ~/.config/i3/status.py
   position top
-  tray_output primary
-  tray_padding 1
+  tray_output none
   height 22
   separator_symbol " "
 
