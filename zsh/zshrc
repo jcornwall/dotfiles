@@ -50,7 +50,7 @@ WORDCHARS=${WORDCHARS/\//}
 
 PS1=""
 if [[ -n "$PS1PREFIX" ]]; then
-  PS1="%F{0}%K{8} $PS1PREFIX %F{8}%K{19}"
+  PS1="%F{20}%K{18} $PS1PREFIX %F{18}%K{19}"
 fi
 PS1="$PS1%K{19}%F{20} %1~ %k%F{19}%f "
 
