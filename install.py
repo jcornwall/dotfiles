@@ -39,6 +39,7 @@ def link_config_files():
     ["spacemacs/base16-woodland-theme.el", os.path.join(home_dir, ".spacemacs.d/themes/base16-woodland-theme.el")],
     ["spacemacs/init.el",                  os.path.join(home_dir, ".spacemacs.d/init.el")],
     ["termite/config",                     "termite/config"],
+    ["themes/numix-woodland",              os.path.join(home_dir, ".themes/numix-woodland")],
     ["x/xinitrc",                          os.path.join(home_dir, ".xinitrc")],
     ["x/Xresources",                       "x/Xresources"],
     ["xdg/user-dirs.dirs",                 "user-dirs.dirs"],

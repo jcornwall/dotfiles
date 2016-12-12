@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=numix-woodland
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+Name=numix-woodland
+GtkTheme=numix-woodland
+MetacityTheme=numix-woodland
+IconTheme=numix-woodland
