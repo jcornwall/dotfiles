@@ -27,7 +27,7 @@
     :base0C "#6eb958"
     :base0D "#88a4d3"
     :base0E "#bb90e2"
-    :base0F "#c79668")
+    :base0F "#b49368")
   "All colors for Base16 Woodland are defined here.")
 
 ;; Define the theme

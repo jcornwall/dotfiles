@@ -88,7 +88,7 @@ for_window [class="^.*"] border pixel 2
 gaps outer 0
 gaps inner 20
 
-client.focused          #c79668 #000000 #ffffff #c79668 #c79668
+client.focused          #b49368 #000000 #ffffff #b49368 #b49368
 client.focused_inactive #373b41 #000000 #ffffff #373b41 #373b41
 client.unfocused        #373b41 #000000 #ffffff #373b41 #373b41
 
@@ -103,11 +103,11 @@ bar {
   separator_symbol " "
 
   colors {
-    statusline #c79668
+    statusline #b49368
     background #00000000
     focused_workspace #b7ba53 #b7ba53 #231e18
     active_workspace #9d8b70 #9d8b70 #231e18
-    inactive_workspace #231e18 #231e18 #c79668
+    inactive_workspace #231e18 #231e18 #b49368
   }
 }
 
