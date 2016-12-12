@@ -212,9 +212,7 @@ status.register(
 )
 
 status.register(
-  "pulseaudio",
-  format = "  <span color='#b7ba53'></span>   {volume}% ",
-  color_muted = "#48413a",
+  RedshiftTimed,
   hints = {
     "markup" : "pango",
     "background" : "#231e18",
@@ -251,7 +249,9 @@ status.register(
 )
 
 status.register(
-  RedshiftTimed,
+  "pulseaudio",
+  format = "  <span color='#b7ba53'></span>   {volume}% ",
+  color_muted = "#48413a",
   hints = {
     "markup" : "pango",
     "background" : "#231e18",
