@@ -402,6 +402,8 @@ you should place your code here."
                       :background "#302b25" :foreground "#9d8b70" :weight 'normal)
   (set-face-attribute 'company-template-field nil
                       :background "#48413a" :foreground "#cabcb1")
+  (set-face-attribute 'rtags-skippedline nil
+                      :foreground "#9d8b70")
 
   )
 
