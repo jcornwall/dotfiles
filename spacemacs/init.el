@@ -310,7 +310,7 @@ you should place your code here."
   (setq vc-follow-symlinks t)
 
   ;; Custom key-bindings.
-  (define-key evil-normal-state-map (kbd "<backspace>") 'evil-search-highlight-persist-remove-all)
+  (define-key evil-normal-state-map (kbd "<DEL>") 'evil-search-highlight-persist-remove-all)
 
   (dolist (mode '(c-mode c++-mode))
     (evil-leader/set-key-for-mode mode
