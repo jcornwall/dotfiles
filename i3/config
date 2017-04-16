@@ -2,8 +2,8 @@
 set $ws1 1:
 set $ws2 2:
 set $ws3 3:
-set $ws4 4:
-set $ws5 5
+set $ws4 4
+set $ws5 5:
 set $ws6 6
 set $ws7 7
 set $ws8 8
@@ -13,7 +13,8 @@ set $ws10 10
 workspace $ws1 output DVI-D-0
 workspace $ws2 output DVI-D-0
 workspace $ws3 output DVI-D-0
-workspace $ws4 output DVI-I-1
+workspace $ws4 output DVI-D-0
+workspace $ws5 output DVI-I-1
 
 set $wsmove exec --no-startup-id ~/.config/i3/move-ws.py
 
@@ -88,7 +89,7 @@ for_window [class="^.*"] border pixel 2
 gaps outer 0
 gaps inner 20
 
-client.focused          #b49368 #000000 #ffffff #b49368 #b49368
+client.focused          #9d8b70 #000000 #ffffff #9d8b70 #9d8b70
 client.focused_inactive #373b41 #000000 #ffffff #373b41 #373b41
 client.unfocused        #373b41 #000000 #ffffff #373b41 #373b41
 

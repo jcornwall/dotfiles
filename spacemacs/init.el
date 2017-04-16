@@ -41,8 +41,12 @@ values."
      ;; better-defaults
      emacs-lisp
      git
+     html
+     ;; javascript
      ;; markdown
-     ;; org
+     org
+     python
+     rust
      shell
      ;; (shell :variables
      ;;        shell-default-height 30
@@ -131,7 +135,7 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(base16-tomorrow-night)
+   dotspacemacs-themes '(base16-woodland)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
@@ -304,10 +308,17 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
+  (remove-hook 'diff-mode-hook #'whitespace-mode)
+
   ;; Custom variables.
   (setq gdb-many-windows t)
+  (setq-default js2-basic-offset 2)
+  (setq rust-indent-offset 2)
   (setq scroll-margin 10)
   (setq vc-follow-symlinks t)
+  (setq web-mode-code-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-markup-indent-offset 2)
 
   ;; Custom key-bindings.
   (define-key evil-normal-state-map (kbd "<DEL>") 'evil-search-highlight-persist-remove-all)
@@ -395,9 +406,7 @@ you should place your code here."
   (setq compilation-exit-message-function 'compilation-exit-autoclose)
 
   ;; Custom styling.
-  (add-to-list 'custom-theme-load-path "~/.spacemacs.d/themes")
-  (load-theme 'base16-woodland)
-
+  (require 'linum-relative)
   (set-face-attribute 'linum-relative-current-face nil
                       :background "#302b25" :foreground "#9d8b70" :weight 'normal)
   (set-face-attribute 'company-template-field nil
@@ -412,10 +421,24 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+ '(custom-safe-themes
+   (quote
+    ("8be07a2c1b3a7300860c7a65c0ad148be6d127671be04d3d2120f1ac541ac103" "3380a2766cf0590d50d6366c5a91e976bdc3c413df963a0ab9952314b4577299" "8175c96c49a5d595cc677e5b352cdc73a2f875cfef60d453a6c3e17258326650" "a64be43957d69f2796880fda02491e9f5838f89b5a41f75cc6a16d0dfb7135a8" "16afdb8a3489e16ddfa235f7617953f07ef69852b7d28127a2d31c215df5bc7e" "93842a6b09417631bf07231a5c1e7b376a33de9aa8192e3f55c7a08154e895dc" default)))
+ '(evil-want-Y-yank-to-eol nil)
+ '(package-selected-packages
+   (quote
+    (winum fuzzy org-projectile org-present org-pomodoro alert log4e gntp org-download htmlize gnuplot toml-mode racer flycheck-rust seq cargo rust-mode vimrc-mode dactyl-mode yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc cython-mode company-anaconda anaconda-mode pythonic base16-woodland-theme web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode company-web web-completion-data web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc company-tern dash-functional tern coffee-mode xterm-color ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spacemacs-theme spaceline powerline smeargle shell-pop rtags restart-emacs rainbow-delimiters popwin persp-mode pcre2el paradox spinner orgit org org-plus-contrib org-bullets open-junk-file neotree multi-term move-text magit-gitflow macrostep lorem-ipsum linum-relative link-hint info+ indent-guide ido-vertical-mode hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile helm-gitignore request helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link flycheck-pos-tip pos-tip flycheck pkg-info epl flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit magit magit-popup git-commit with-editor evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight eshell-z eshell-prompt-extras esh-help elisp-slime-nav dumb-jump f s diminish define-word company-statistics company column-enforce-mode cmake-ide levenshtein clean-aindent-mode bind-map bind-key auto-yasnippet yasnippet auto-highlight-symbol auto-compile packed dash aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core async ac-ispell auto-complete popup quelpa package-build base16-theme)))
+ '(safe-local-variable-values
+   (quote
+    ((projectile-project-compilation-dir . "../build/wlc-dbg")
+     (projectile-project-compilation-dir . "../build/sway-dbg")
+     (cmake-ide-build-dir . "/home/jay/dev/build/algorithms-dbg")
+     (projectile-project-compilation-cmd . "ninja")
+     (projectile-project-compilation-dir . "../build/algorithms-dbg")
+     (projectile-project-compilation-cmd . "ninja-build")
+     (projectile-project-compilation-dir . "../build/demotoys-dbg")
+     (cmake-ide-build-dir "/home/jay/dev/build/demotoys-dbg")
+     (projectile-project-compilation-dir "../build/demotoys-dbg")
+     (projectile-project-compilation-cmd "ninja-build")
+     (projectile-project-compilation-dir "/home/jay/dev/build/demotoys-dbg")
+     (cmake-ide-build-dir . "/home/jay/dev/build/demotoys-dbg")))))

@@ -36,7 +36,6 @@ def link_config_files():
     ["nvim/init.vim",                      "nvim/init.vim"],
     ["nvim/plug.vim",                      "nvim/autoload/plug.vim"],
     ["rofi/config",                        "rofi/config"],
-    ["spacemacs/base16-woodland-theme.el", os.path.join(home_dir, ".spacemacs.d/themes/base16-woodland-theme.el")],
     ["spacemacs/init.el",                  os.path.join(home_dir, ".spacemacs.d/init.el")],
     ["termite/config",                     "termite/config"],
     ["themes/numix-woodland",              os.path.join(home_dir, ".themes/numix-woodland")],
