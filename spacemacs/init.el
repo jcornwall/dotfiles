@@ -311,6 +311,7 @@ you should place your code here."
   (remove-hook 'diff-mode-hook #'whitespace-mode)
 
   ;; Custom variables.
+  (setq company-idle-delay nil)
   (setq gdb-many-windows t)
   (setq-default js2-basic-offset 2)
   (setq rust-indent-offset 2)
@@ -353,7 +354,9 @@ you should place your code here."
 
     ;; company setup
     (push 'company-rtags company-backends)
-    (company-mode))
+    (company-mode)
+    (define-key c-mode-map [tab] 'company-indent-or-complete-common)
+    (define-key c++-mode-map [tab] 'company-indent-or-complete-common))
 
   (add-hook 'c-mode-hook 'setup-rtags-c-c++)
   (add-hook 'c++-mode-hook 'setup-rtags-c-c++)
