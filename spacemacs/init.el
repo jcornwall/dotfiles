@@ -355,8 +355,8 @@ you should place your code here."
     ;; company setup
     (push 'company-rtags company-backends)
     (company-mode)
-    (define-key c-mode-map [tab] 'company-indent-or-complete-common)
-    (define-key c++-mode-map [tab] 'company-indent-or-complete-common))
+    (define-key c-mode-map (kbd "TAB") 'company-indent-or-complete-common)
+    (define-key c++-mode-map (kbd "TAB") 'company-indent-or-complete-common))
 
   (add-hook 'c-mode-hook 'setup-rtags-c-c++)
   (add-hook 'c++-mode-hook 'setup-rtags-c-c++)
