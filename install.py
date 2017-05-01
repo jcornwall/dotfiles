@@ -39,6 +39,7 @@ def link_config_files():
     ["spacemacs/init.el",                  os.path.join(home_dir, ".spacemacs.d/init.el")],
     ["termite/config",                     "termite/config"],
     ["themes/numix-woodland",              os.path.join(home_dir, ".themes/numix-woodland")],
+    ["tmux/tmux.conf",                     "tmux/tmux.conf"],
     ["x/xinitrc",                          os.path.join(home_dir, ".xinitrc")],
     ["x/Xresources",                       "x/Xresources"],
     ["xdg/user-dirs.dirs",                 "user-dirs.dirs"],
